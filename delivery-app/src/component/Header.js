@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from "react";
 import { Link } from 'react-router-dom'; // Import Link component from react-router-dom
 import logo from '../assest/logo.png';
 import { BsCartFill } from "react-icons/bs";
-import { FaUserAlt } from "react-icons/fa";
+import { HiOutlineUserCircle } from "react-icons/hi";
 
 
-export const Header = () => {
+ const Header = () => {
+  const [showMenu, setShowMenu] = useState(false);
+  
+  const handleShowMenu = () => {
+    setShowMenu((preve) => !preve)
+  }
   return (
     <header className="fixed shadow-md w-full h-13 px-2 md:px-4">
       <div className="flex items-center h-full justify-between">
@@ -28,11 +33,18 @@ export const Header = () => {
   <BsCartFill/>
   <div className="absolute -top-1 -right-1 text-white bg-red-500 h-4 w-4 rounded-full m-0 p-0 text-sm text-center ">0</div>
 </div>
-<div className=''>
-  <FaUserAlt/>
+<div className='text-slate-600' onClick={handleShowMenu}>
+<div className='text-3xl ' >
+  <HiOutlineUserCircle/>
 </div>
+{showMenu && (
+<div className='absolute right-2 bg-white py-2 shadow drop-shadow-md'>
+  <p className='whitespace-nowrap cursor-pointer'>New Product</p>
+  <p className='whitespace-nowrap cursor-pointer'>Login</p>
+</div>
+)}
         </div>
-        
+        </div>
       </div>
     </header>
   );
