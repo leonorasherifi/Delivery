@@ -21,7 +21,7 @@ const router = createBrowserRouter(
   <Route path="contact" element={<Contact />} />
   <Route path="login" element={<Login />} />
   <Route path="NewProduct" element={<NewProduct />} />
-  <Route path="signup" element={<Signup />} />
+  <Route path="Signup" element={<Signup />} />
 
 
 
