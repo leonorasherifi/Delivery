@@ -8,6 +8,10 @@ import Home from "./page/Home";
 import Menu from "./page/Menu";
 import About from "./page/About";
 import Contact from "./page/Contact";
+import Login from "./page/login";
+import NewProduct from "./page/NewProduct";
+import Signup from "./page/Signup";
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App/>}>
@@ -15,6 +19,11 @@ const router = createBrowserRouter(
     <Route path="menu" element={<Menu />} />
   <Route path="about" element={<About />} />
   <Route path="contact" element={<Contact />} />
+  <Route path="login" element={<Login />} />
+  <Route path="NewProduct" element={<NewProduct />} />
+  <Route path="signup" element={<Signup />} />
+
+
 
     </Route>
   )
