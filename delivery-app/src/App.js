@@ -11,7 +11,7 @@ function App() {
 return(
   <div>
     <Header/>
-    <main className='pt-10 bg-slate-200'>
+    <main className='pt-10 bg-slate-200 min-h-[calc(100vh)]'>
     <Outlet/>
     </main>
   </div>
