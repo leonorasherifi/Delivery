@@ -38,9 +38,9 @@ import { HiOutlineUserCircle } from "react-icons/hi";
   <HiOutlineUserCircle/>
 </div>
 {showMenu && (
-<div className='absolute right-2 bg-white py-2 shadow drop-shadow-md'>
-  <p className='whitespace-nowrap cursor-pointer'>New Product</p>
-  <p className='whitespace-nowrap cursor-pointer'>Login</p>
+<div className='absolute right-2 bg-white py-2 shadow drop-shadow-md flex flex-col'>
+  <Link to={'NewProduct'} className='whitespace-nowrap cursor-pointer'>New Product</Link>
+  <Link to={'login'}  className='whitespace-nowrap cursor-pointer'>Login</Link>
 </div>
 )}
         </div>
