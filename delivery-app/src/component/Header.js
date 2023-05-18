@@ -27,7 +27,7 @@ import { HiOutlineUserCircle } from "react-icons/hi";
             <Link to={"menu"}>Menu</Link>
             <Link to={"about"}>About</Link>
             <Link to={"contact"}>Contact</Link>
-            <Link to={"Signup"}>Signup </Link>
+            <Link to={"Signup"}>SignUp </Link>
 
 </nav>
 <div className='text-2xl text-slate-600 relative'>
