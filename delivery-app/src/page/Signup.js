@@ -4,7 +4,7 @@ import { BiShow, BiHide } from "react-icons/bi";
 import { Link, useNavigate } from "react-router-dom";
 import { BsEmojiSmileUpsideDown } from "react-icons/bs";
 import { ImagetoBase64 } from "../utility/ImageToBase64.js";
-// import { toast } from "react-hot-toast";
+import { toast } from "react-hot-toast";
 
 function Signup() {
   const navigate = useNavigate();
@@ -66,8 +66,8 @@ console.log(process.env.REACT_APP_SERVER_DOMIN)
           const dataRes = await fetchData.json()
     
 
-        // alert(dataRes.message);
-       // toast(dataRes.message)
+         alert(dataRes.message);
+       toast(dataRes.message)
         if(dataRes.alert){
           navigate("/login");
         }
