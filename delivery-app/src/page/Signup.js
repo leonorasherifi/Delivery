@@ -3,7 +3,7 @@ import loginSignupImage from "../assest/login-animation.gif";
 import { BiShow, BiHide } from "react-icons/bi";
 import { Link, useNavigate } from "react-router-dom";
 import { BsEmojiSmileUpsideDown } from "react-icons/bs";
-import { ImagetoBase64 } from "../utility/ImageToBase64.js";
+import { ImagetoBase64 } from "../utility/ImagetoBase64.js";
 import { toast } from "react-hot-toast";
 
 function Signup() {
