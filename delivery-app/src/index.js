@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {createBrowserRouter, createRoutesElements,createRoutesFromElements,Route,RouterProvider } from 'react-router-dom'
+import {createBrowserRouter,createRoutesFromElements,Route,RouterProvider } from 'react-router-dom'
 import Home from "./page/Home";
 import Menu from "./page/Menu";
 import About from "./page/About";
@@ -13,6 +13,9 @@ import NewProduct from "./page/NewProduct";
 import Signup from "./page/Signup";
 import { Store } from "./redux/index";
 import { Provider } from 'react-redux';
+import Cart from "./page/Cart";
+import Success from "./page/Success";
+import Cancel from "./page/Cancel";
 
 
 const router = createBrowserRouter(
@@ -25,6 +28,9 @@ const router = createBrowserRouter(
   <Route path="login" element={<Login />} />
   <Route path="NewProduct" element={<NewProduct />} />
   <Route path="Signup" element={<Signup />} />
+  <Route path="cart" element={<Cart />} />
+  <Route path="success" element={<Success/>}/>
+  <Route path="cancel" element={<Cancel/>}/>
 
 
 
