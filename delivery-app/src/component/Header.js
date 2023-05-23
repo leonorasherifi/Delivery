@@ -3,11 +3,15 @@ import { Link } from 'react-router-dom'; // Import Link component from react-rou
 import logo from '../assest/logo.png';
 import { BsCartFill } from "react-icons/bs";
 import { HiOutlineUserCircle } from "react-icons/hi";
+import { useSelector } from 'react-redux';
+
 
 
  const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
-  
+  const userData = useSelector((state) => state.user);
+  console.log(userData)
+
   const handleShowMenu = () => {
     setShowMenu((preve) => !preve)
   }
@@ -34,14 +38,31 @@ import { HiOutlineUserCircle } from "react-icons/hi";
   <BsCartFill/>
   <div className="absolute -top-1 -right-1 text-white bg-red-500 h-4 w-4 rounded-full m-0 p-0 text-sm text-center ">0</div>
 </div>
-<div className='text-slate-600' onClick={handleShowMenu}>
-<div className='text-3xl ' >
-  <HiOutlineUserCircle/>
-</div>
+
+<div className=" text-slate-600" onClick={handleShowMenu}>
+            <div className="text-3xl cursor-pointer w-8 h-8 rounded-full overflow-hidden drop-shadow-md">
+              {userData.image ? (
+                <img src={userData.image} className="h-full w-full" />
+              ) : (
+                <HiOutlineUserCircle />
+              )}
+            </div>
+
+
 {showMenu && (
 <div className='absolute right-2 bg-white py-2 shadow drop-shadow-md flex flex-col'>
   <Link to={'NewProduct'} className='whitespace-nowrap cursor-pointer'>New Product</Link>
-  <Link to={'login'}  className='whitespace-nowrap cursor-pointer'>Login</Link>
+ 
+  {userData.image ? (
+                  <p
+                    className="cursor-pointer text-white px-2 bg-red-500"
+                    onClick={handleLogout}
+                  >
+                    Logout ({userData.firstName}){" "}
+                  </p>
+                ) : (
+  <Link to={"login"} className="whitespace-nowrap cursor-pointer px-2" >  Login </Link>  )}
+
 </div>
 )}
         </div>
