@@ -55,7 +55,7 @@ console.log(process.env.REACT_APP_SERVER_DOMIN)
     if (firstName && email && password && confirmPassword) {
       if (password === confirmPassword) {
     
-          const fetchData = await fetch(`${process.env.REACT_APP_SERVER_DOMIN}/signup`,{
+          const fetchData = await fetch(`${process.env.REACT_APP_SERVER_DOMIN}/Signup`,{
             method : "POST",
             headers : {
               "content-type" : "application/json"
