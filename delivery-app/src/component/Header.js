@@ -3,18 +3,26 @@ import { Link } from 'react-router-dom'; // Import Link component from react-rou
 import logo from '../assest/logo.png';
 import { BsCartFill } from "react-icons/bs";
 import { HiOutlineUserCircle } from "react-icons/hi";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { logoutRedux } from "../redux/userSlice";
+import { toast } from "react-hot-toast";
 
 
 
  const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const userData = useSelector((state) => state.user);
-  console.log(userData)
+  const dispatch = useDispatch();
 
   const handleShowMenu = () => {
     setShowMenu((preve) => !preve)
   }
+
+  const handleLogout = () => {
+    dispatch(logoutRedux());
+    toast("Logout successfully");
+  };
+
   return (
     <header className="fixed shadow-md w-full h-13 px-2 md:px-4">
       <div className="flex items-center h-full justify-between">
