@@ -48,29 +48,42 @@ function Signup() {
       })
 
   }
-console.log(process.env.REACT_APP_SERVER_DOMIN)
   const handleSubmit = async(e) => {
     e.preventDefault();
     const { firstName, email, password, confirmPassword } = data;
     if (firstName && email && password && confirmPassword) {
       if (password === confirmPassword) {
     
-          const fetchData = await fetch(`${process.env.REACT_APP_SERVER_DOMIN}/Signup`,{
-            method : "POST",
-            headers : {
-              "content-type" : "application/json"
+          // const fetchData = await fetch(`${process.env.REACT_APP_SERVER_DOMIN}/auth/signup`,{
+          //   method : "POST",
+          //   headers : {
+          //     "content-type" : "application/json"
+          //   },
+          //   body : JSON.stringify(data)
+          // })
+
+          // const dataRes = await fetchData.json()
+          const options = {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              // 'Authorization': 'Bearer token'
             },
-            body : JSON.stringify(data)
-          })
+            body: JSON.stringify(data) || null,
+            mode: 'cors',
+            credentials: 'include'
+          };
+          
+          fetch('http://localhost:5000/product', options)
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.log(error));
 
-          const dataRes = await fetchData.json()
-    
-
-         alert(dataRes.message);
-       toast(dataRes.message)
-        if(dataRes.alert){
-          navigate("/login");
-        }
+      //    alert(dataRes.message);
+      //  toast(dataRes.message)
+      //   if(dataRes.alert){
+      //     navigate("/login");
+      //   }
        
       } else {
         alert("password and confirm password not equal");
