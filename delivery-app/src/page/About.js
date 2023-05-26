@@ -13,7 +13,7 @@ const About = () => {
     "We are here to offer you the best help we can. We buy goods from wholesalers from nearby"+
     "and we deliver them directly to your dorsteps."+
     "We are understaffed for now but we are thinking of expanding in the future due to the help"+
-    "of other companies so that everyone is able to enjoy  the service.Stay tuned!
+    "of other companies so that everyone is able to enjoy  the service.Stay tuned!" + 
     "Email us for any question or simply getting connected!";
 
   return (
