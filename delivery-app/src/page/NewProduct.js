@@ -43,7 +43,7 @@ const Newproduct = () => {
     const {name,image,category,price} = data
 
     if(name && image && category && price){
-      const fetchData = await fetch(`${process.env.REACT_APP_SERVER_DOMIN}/uploadProduct`,{
+      const fetchData = await fetch(`${process.env.REACT_APP_SERVER_DOMIN}/product`,{
         method : "POST",
         headers : {
           "content-type" : "application/json"
@@ -73,7 +73,8 @@ const Newproduct = () => {
    
   }
   return (
-    <div className="p-20">
+    <div className="p-20
+    ">
        <form className='m-auto w-full max-w-md  shadow flex flex-col p-3 bg-white' onSubmit={handleSubmit}>
         <label htmlFor='name'>Name</label>
         <input type={"text"}  name="name" className='bg-slate-200 p-1 my-1' onChange={handleOnChange} value={data.name}/>
