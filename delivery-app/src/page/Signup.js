@@ -74,16 +74,15 @@ function Signup() {
             credentials: 'include'
           };
           
-          fetch('http://localhost:5000/product', options)
-            .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.log(error));
+          const fetchData = (await fetch('http://localhost:5000/auth/signup', options));
+          const dataRes = await fetchData.json();
 
-      //    alert(dataRes.message);
-      //  toast(dataRes.message)
-      //   if(dataRes.alert){
-      //     navigate("/login");
-      //   }
+
+         alert(dataRes.message);
+       toast(dataRes.message)
+        if(dataRes.alert){
+          navigate("/login");
+        }
        
       } else {
         alert("password and confirm password not equal");
