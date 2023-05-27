@@ -1,12 +1,16 @@
 const express = require('express');
-const UserDBModel = require("../models/UserModel");
+const ProductDBModel = require("../models/ProductModel");
+
+
 
 const router = express.Router();
 
+
 router.get('/', async (_req, res, next) => {
     try {
-        console.log('test');
-        res.status(200).send({ data: 'OK!' });
+        const data = await ProductDBModel.find({})
+        console.log('data: ' + JSON.stringify(data))
+         res.send(JSON.stringify(data))
     } catch (err) {
         next(err);
     }
@@ -15,10 +19,10 @@ router.get('/', async (_req, res, next) => {
 
 router.post('/', async (_req, res, next) => {
     try {
-        const data = _req.body;
-        console.log('test111', data);
-        const insert = await UserDBModel.create(data);
-        res.status(200).send({ data: 'OK!' });
+        const data = await ProductDBModel(_req.body)
+        const datasave = await data.save()
+        res.send({message : "Upload successfully"})
+
     } catch (err) {
         next(err);
     }
