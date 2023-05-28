@@ -21,7 +21,7 @@ const Menu = () => {
       navigate("/cart")
   }
   return (
-    <div className="p-2 md:p-4">
+    <div className="p-2 md:p-20">
       <div className="w-full max-w-4xl m-auto md:flex bg-white">
         <div className="max-w-sm  overflow-hidden w-full p-5">
         {productDisplay && (
