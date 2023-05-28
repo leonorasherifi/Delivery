@@ -25,7 +25,7 @@ const PaymentController = require("../controllers/PaymentController");
 
 const routes = (app) => {
   app.use("/ping", PingController);
-  app.use("/product", ProductController);
+  app.use("/products", ProductController);
   app.use("/auth", AuthController);
   app.use("/create-checkout-session", PaymentController);
 };
