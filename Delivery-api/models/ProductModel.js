@@ -7,7 +7,7 @@ const schemaProduct = mongoose.Schema({
     description: String,
   });
 
-  const ProductDBModel = mongoose.model("products",schemaProduct)
+  const ProductDBModel = mongoose.model("product",schemaProduct)
   
 
 module.exports = ProductDBModel;
