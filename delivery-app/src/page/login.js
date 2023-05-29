@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import loginSignupImage from "../assest/login-animation.gif";
 import { BiShow, BiHide } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import { BsEmojiSmileUpsideDown } from "react-icons/bs";
 import {toast} from "react-hot-toast"
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -72,7 +71,7 @@ const Login = () => {
   return (
     <div className="p-3 md:p-20">
     <div className="w-full max-w-sm bg-white m-auto flex  flex-col p-4">
-      {/* <h1 className='text-center text-2xl font-bold'>Sign up</h1> */}
+      
       <div className="w-20 overflow-hidden rounded-full drop-shadow-md shadow-md m-auto">
         <img src={loginSignupImage} className="w-full" />
       </div>
