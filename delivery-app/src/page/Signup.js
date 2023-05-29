@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import loginSignupImage from "../assest/login-animation.gif";
 import { BiShow, BiHide } from "react-icons/bi";
 import { Link, useNavigate } from "react-router-dom";
-import { BsEmojiSmileUpsideDown } from "react-icons/bs";
 import { ImagetoBase64 } from "../utility/ImagetoBase64.js";
 import { toast } from "react-hot-toast";
 
@@ -54,20 +53,12 @@ function Signup() {
     if (firstName && email && password && confirmPassword) {
       if (password === confirmPassword) {
     
-          // const fetchData = await fetch(`${process.env.REACT_APP_SERVER_DOMIN}/auth/signup`,{
-          //   method : "POST",
-          //   headers : {
-          //     "content-type" : "application/json"
-          //   },
-          //   body : JSON.stringify(data)
-          // })
-
-          // const dataRes = await fetchData.json()
+          
           const options = {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
-              // 'Authorization': 'Bearer token'
+            
             },
             body: JSON.stringify(data) || null,
             mode: 'cors',
