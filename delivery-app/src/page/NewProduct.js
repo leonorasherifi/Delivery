@@ -26,7 +26,7 @@ const Newproduct = () => {
 
   const uploadImage = async(e)=>{
       const data = await ImagetoBase64(e.target.files[0])
-      // console.log(data)
+     
 
       setData((preve)=>{
         return{
